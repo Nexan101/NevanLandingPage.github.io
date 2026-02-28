@@ -7,7 +7,6 @@ import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Socials from './components/Socials'
-import Pay, { PaySuccess } from './pages/Pay'
 import { personal } from './data/content'
 
 function Footer() {
@@ -45,8 +44,6 @@ export default function App() {
     <BrowserRouter basename="/NevanLandingPage.github.io">
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/pay" element={<Pay />} />
-        <Route path="/pay/success" element={<PaySuccess />} />
       </Routes>
     </BrowserRouter>
   )
