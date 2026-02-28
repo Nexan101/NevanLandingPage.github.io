@@ -17,9 +17,9 @@ export const personal = {
 }
 
 export const socials = [
-  { label: 'GitHub',   href: 'https://github.com/nevan',      icon: 'github' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/nevan',  icon: 'linkedin' },
-  { label: 'Email',    href: 'mailto:Nevanle123@gmail.com',    icon: 'mail' },
+  { label: 'GitHub',   href: 'https://github.com/Nexan101',              icon: 'github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/feed/',            icon: 'linkedin' },
+  { label: 'Email',    href: 'mailto:Nevanle123@gmail.com',               icon: 'mail' },
 ]
 
 export const projects = [
