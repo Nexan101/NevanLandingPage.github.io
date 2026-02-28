@@ -35,9 +35,9 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-center h-16 relative">
-          {/* Desktop nav — centered */}
-          <nav className="hidden md:flex items-center gap-8">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center relative">
+          {/* Desktop nav — absolutely centered */}
+          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
             {navLinks.map(({ label, href }) => (
               <button
                 key={href}
@@ -52,7 +52,7 @@ export default function Navbar() {
           {/* Mobile hamburger — pinned right */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden absolute right-6 flex flex-col gap-1.5 p-2"
+            className="md:hidden ml-auto flex flex-col gap-1.5 p-2"
             aria-label="Toggle menu"
           >
             <span className={`block w-5 h-0.5 bg-[#18181b] transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
