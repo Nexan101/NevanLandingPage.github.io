@@ -52,7 +52,7 @@ export default function About() {
               <div className="relative">
                 <div className="w-48 h-48 rounded-2xl border border-[#e4e4e7] overflow-hidden shadow-sm">
                   <img
-                    src="/avatar.png"
+                    src={`${import.meta.env.BASE_URL}avatar.png`}
                     alt={personal.name}
                     className="w-full h-full object-cover object-top"
                   />

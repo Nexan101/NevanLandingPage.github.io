@@ -23,7 +23,7 @@ function BannerCard({ project }) {
       {/* ── Real project: photo background ── */}
       {hasImage && (
         <img
-          src={project.image}
+          src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover object-top opacity-70"
           draggable={false}
