@@ -8,8 +8,13 @@ const looped = [...projects, ...projects]
 function BannerCard({ project }) {
   const hasImage = Boolean(project.image)
 
+  const handleCardClick = () => {
+    if (project.live) window.open(project.live, '_blank', 'noreferrer')
+  }
+
   return (
     <motion.div
+      onClick={handleCardClick}
       className="relative flex-shrink-0 rounded-2xl overflow-hidden cursor-pointer group/card"
       style={{
         background: hasImage ? '#111' : '#c8c8cc',
