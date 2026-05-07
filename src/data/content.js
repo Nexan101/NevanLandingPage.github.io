@@ -35,11 +35,12 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'DevToolkit CLI',
-    description: 'A command-line toolkit that automates repetitive development tasks, from scaffolding to deployment pipelines.',
-    tech: ['TypeScript', 'Node.js', 'Shell', 'Docker'],
-    github: 'https://github.com/nevan/devtoolkit',
+    title: "Nevan's Kalshi Tracker",
+    description: 'A personal prediction market tracker built on top of the Kalshi API. Tracks open positions, P&L over time, and market sentiment in real time.',
+    tech: ['React', 'Kalshi API', 'Tailwind', 'Chart.js'],
+    github: null,
     live: null,
+    route: '/kalshi-tracker',
     featured: true,
   },
   {

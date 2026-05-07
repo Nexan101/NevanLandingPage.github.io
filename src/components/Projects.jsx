@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { Github, ExternalLink } from 'lucide-react'
 import { projects } from '../data/content'
 
@@ -7,9 +8,11 @@ const looped = [...projects, ...projects]
 
 function BannerCard({ project }) {
   const hasImage = Boolean(project.image)
+  const navigate = useNavigate()
 
   const handleCardClick = () => {
-    if (project.live) window.open(project.live, '_blank', 'noreferrer')
+    if (project.route) navigate(project.route)
+    else if (project.live) window.open(project.live, '_blank', 'noreferrer')
   }
 
   return (
@@ -35,14 +38,31 @@ function BannerCard({ project }) {
         />
       )}
 
-      {/* ── Placeholder: frosted grey with "Coming Soon" ── */}
-      {!hasImage && (
+      {/* ── Placeholder: coming soon or named internal project ── */}
+      {!hasImage && !project.route && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#d1d1d6]">
           <span
             className="text-[#4b4b52] font-bold text-xs tracking-[0.25em] uppercase whitespace-nowrap drop-shadow-sm"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
           >
             Coming Soon
+          </span>
+        </div>
+      )}
+
+      {/* ── Internal route project: dark card with vertical title ── */}
+      {!hasImage && project.route && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#18181b] group-hover/card:bg-[#111] transition-colors duration-300">
+          <span
+            className="text-white/80 group-hover/card:text-white font-bold text-xs tracking-[0.22em] uppercase whitespace-nowrap transition-colors duration-200"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            {project.title}
+          </span>
+          <span
+            className="absolute bottom-5 text-white/40 group-hover/card:text-white/70 text-[10px] tracking-widest uppercase transition-colors duration-200"
+          >
+            View →
           </span>
         </div>
       )}

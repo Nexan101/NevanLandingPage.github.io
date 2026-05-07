@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 /* ─── Base ─── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Put resets inside @layer base so Tailwind utilities (mx-auto, p-*, etc.)
+   in @layer utilities still win over the margin/padding reset. */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-html {
-  scroll-behavior: smooth;
-  background-color: #fafafa;
-  color: #18181b;
-  font-family: 'Inter', system-ui, sans-serif;
-}
+  html {
+    scroll-behavior: smooth;
+    background-color: #fafafa;
+    color: #18181b;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 
-body {
-  overflow-x: hidden;
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /* ─── Custom Scrollbar ─── */

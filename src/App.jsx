@@ -7,6 +7,7 @@ import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Socials from './components/Socials'
+import KalshiTracker from './pages/KalshiTracker'
 import { personal } from './data/content'
 
 function Footer() {
@@ -44,6 +45,7 @@ export default function App() {
     <BrowserRouter basename="/NevanLandingPage.github.io">
       <Routes>
         <Route path="/" element={<Portfolio />} />
+        <Route path="/kalshi-tracker" element={<KalshiTracker />} />
       </Routes>
     </BrowserRouter>
   )
